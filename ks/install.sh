@@ -21,6 +21,6 @@ if [ -f /Users/$USER/bin/ks ]; then
 fi
 mv ./ks /Users/$USER/bin/ks
 
-if [ ! -f ./bell ]; then
-  wget http://sound.gob.jp/library/mp3/S_651.mp3 -O ./bell.mp3
+if [ ! -f "$HOME/Music/bell.mp3" ]; then
+  wget http://sound.gob.jp/library/mp3/S_651.mp3 -O $HOME/Music/bell.mp3
 fi

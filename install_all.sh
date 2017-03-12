@@ -6,7 +6,7 @@ set -eu
 # walkingmask
 
 for f in *; do
-  if [[ "$f" =~ "sh" ]]; then
+  if [[ "$f" =~ ".sh" ]] || [[ "$f" =~ ".md" ]]; then
     continue
   fi
   cd $f

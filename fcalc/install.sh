@@ -17,6 +17,6 @@ gcc -Ofast fcalc.c -o fcalc
 chmod a+x fcalc
 
 if [ -f /Users/$USER/bin/fcalc ]; then
-  m /Users/$USER/bin/fcalc
+  rm /Users/$USER/bin/fcalc
 fi
 mv ./fcalc /Users/$USER/bin/fcalc

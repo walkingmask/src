@@ -7,9 +7,9 @@
 
 file="peep.mp3"
 
-if [ ! -f ~/src/peep/$file ]; then
+if [ ! -f "$HOME/Music/$file" ]; then
   echo "error. sound file is not exist."
   exit 1
 fi
 
-afplay ~/src/peep/$file
+afplay "$HOME/Music/$file"

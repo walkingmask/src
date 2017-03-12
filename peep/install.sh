@@ -21,6 +21,6 @@ if [ -f /Users/$USER/bin/peep ]; then
 fi
 mv ./peep /Users/$USER/bin/peep
 
-if [ ! -f ./peep.mp3 ]; then
-  wget http://taira-komori.jpn.org/sound/animals01/chick.mp3
+if [ ! -f $HOME/Music/peep.mp3 ]; then
+  wget http://taira-komori.jpn.org/sound/animals01/chick.mp3 -O $HOME/Music/peep.mp3
 fi
