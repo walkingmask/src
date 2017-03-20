@@ -13,8 +13,8 @@ fi
 if [ -f ./gsou ]; then
   rm ./gsou
 fi
-cp ./gsou.sh ./gsou
-chmod a+x gsou
+sed -e "s|PWD|`pwd`|g" ./gsou.sh >>./gsou
+chmod a+x ./gsou
 
 if [ -f /Users/$USER/bin/gsou ]; then
   rm /Users/$USER/bin/gsou

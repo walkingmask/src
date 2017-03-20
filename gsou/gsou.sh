@@ -6,13 +6,8 @@ set -e
 # walkingmask
 # generate source code templates
 
-usage () {
-  echo "Usage: gsou [-c|go|html|java|pl|py|sh] [filename]" 2>&1
-  exit 1
-}
-
 # path to templates
-tempath="$HOME/src/gsou/templates/template"
+tempath="PWD/templates/template"
 # registered extensions
 opts="-c,-go,-html,-java,-pl,-py,-sh"
 
@@ -33,7 +28,8 @@ if [ $# -eq 2 ]; then
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl "./$fn"
   fi
 else
-  usage
+  echo "Usage: gsou [-c|go|html|java|pl|py|sh] [filename]" 2>&1
+  exit 1
 fi
 
 exit 0
