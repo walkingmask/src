@@ -12,4 +12,4 @@ if [ ! -f "$HOME/Music/$file" ]; then
   exit 1
 fi
 
-afplay "$HOME/Music/$file"
+afplay -v 0.1 "$HOME/Music/$file"
