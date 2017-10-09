@@ -5,11 +5,11 @@
 # walkingmask
 # Play the peep sound effect
 
-file="peep.mp3"
+filepath="$HOME/res/sound/peep/peep.mp3"
 
-if [ ! -f "$HOME/Music/$file" ]; then
+if [ ! -f "$filepath" ]; then
   echo "error. sound file is not exist."
   exit 1
 fi
 
-afplay -v 0.1 "$HOME/Music/$file"
+afplay -v 0.1 "$filepath"

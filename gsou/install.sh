@@ -10,6 +10,11 @@ if [ ! -d /Users/$USER/bin ]; then
   mkdir /Users/$USER/bin
 fi
 
+if [ ! -d /Users/$USER/res/template ]; then
+  mkdir -p /Users/$USER/res/template
+fi
+cp -r ./template /Users/$USER/res/template/gsou
+
 if [ -f ./gsou ]; then
   rm ./gsou
 fi

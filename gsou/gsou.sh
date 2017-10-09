@@ -7,15 +7,20 @@ set -e
 # generate source code templates
 
 # path to templates
-tempath="PWD/templates/template"
+tempath="$HOME/res/template/gsou/template"
 # registered extensions
 opts="-c,-go,-html,-java,-pl,-py,-sh"
+
+function usage() {
+  echo "Usage: gsou [-c|go|html|java|pl|py|sh] [filename]" 2>&1
+  exit 1
+}
 
 # exception handling
 if [ $# -eq 2 ]; then
   [[ $opts =~ $1 ]] || usage
   # get extension
-  ext=`echo $1 | tr -d '-'`
+  ext=${1:1}
   # filename, date, name
   fn="$2.$ext"
   td="`date +%Y\\\\/%m\\\\/%d`(`date +%a`)"
@@ -28,8 +33,7 @@ if [ $# -eq 2 ]; then
     /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl "./$fn"
   fi
 else
-  echo "Usage: gsou [-c|go|html|java|pl|py|sh] [filename]" 2>&1
-  exit 1
+  usage
 fi
 
 exit 0

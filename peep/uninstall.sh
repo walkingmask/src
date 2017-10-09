@@ -9,3 +9,7 @@ set -e
 if [ -f /Users/$USER/bin/peep ]; then
   rm /Users/$USER/bin/peep
 fi
+
+if [ -d /Users/$USER/res/sound/peep ]; then
+  rm -rf /Users/$USER/res/sound/peep
+fi
