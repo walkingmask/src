@@ -9,3 +9,7 @@ set -e
 if [ -f /Users/$USER/bin/ks ]; then
   rm /Users/$USER/bin/ks
 fi
+
+if [ -d /Users/$USER/res/sound/ks ]; then
+  rm -rf /Users/$USER/res/sound/ks
+fi

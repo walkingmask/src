@@ -8,7 +8,9 @@ set -eu
 for obj in ./*; do
   if [ -d $obj ]; then
     [[ $obj =~ ".git" ]] && continue
-    bash ${obj}install.sh
+    cd $obj
+    bash install.sh
+    cd ..
   fi
 done
 

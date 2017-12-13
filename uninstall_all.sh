@@ -8,7 +8,9 @@ set -eu
 for obj in ./*; do
   if [ -d $obj ]; then
     [[ $obj =~ ".git" ]] && continue
-    bash ${obj}uninstall.sh
+    cd $obj
+    bash uninstall.sh
+    cd ..
   fi
 done
 

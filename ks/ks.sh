@@ -23,6 +23,6 @@ do
   printf "\r${ch:$i:$column}"
   sleep 0.01
 done
-afplay $HOME/Music/bell.mp3 &
+afplay $HOME/res/sound/ks/bell.mp3 &
 echo "\r|q^)9m KASU!!"
 trap - INT 
