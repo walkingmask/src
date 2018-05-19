@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install wm command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./wm ]; then
@@ -16,7 +16,7 @@ fi
 cp ./wm.sh ./wm
 chmod a+x wm
 
-if [ -f /Users/$USER/bin/wm ]; then
-  rm /Users/$USER/bin/wm
+if [ -f $HOME/bin/wm ]; then
+  rm $HOME/bin/wm
 fi
-mv ./wm /Users/$USER/bin/wm
+mv ./wm $HOME/bin/wm

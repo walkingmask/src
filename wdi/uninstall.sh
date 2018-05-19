@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall wdi command
 
-if [ -f /Users/$USER/bin/wdi ]; then
-  rm /Users/$USER/bin/wdi
+if [ -f $HOME/bin/wdi ]; then
+  rm $HOME/bin/wdi
 fi

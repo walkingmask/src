@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install wdi command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./wdi ]; then
@@ -16,7 +16,7 @@ fi
 cp ./wdi.sh ./wdi
 chmod a+x wdi
 
-if [ -f /Users/$USER/bin/wdi ]; then
-  rm /Users/$USER/bin/wdi
+if [ -f $HOME/bin/wdi ]; then
+  rm $HOME/bin/wdi
 fi
-mv ./wdi /Users/$USER/bin/wdi
+mv ./wdi $HOME/bin/wdi

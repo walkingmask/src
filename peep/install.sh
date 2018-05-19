@@ -6,16 +6,16 @@ set -e
 # walkingmask
 # install peep command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
-if [ ! -d /Users/$USER/res/sound/peep ]; then
-  mkdir -p /Users/$USER/res/sound/peep
+if [ ! -d $HOME/res/sound/peep ]; then
+  mkdir -p $HOME/res/sound/peep
 fi
 
-if [ ! -f /Users/$USER/res/sound/peep/peep.mp3 ]; then
-  wget http://taira-komori.jpn.org/sound/animals01/chick.mp3 -O /Users/$USER/res/sound/peep/peep.mp3
+if [ ! -f $HOME/res/sound/peep/peep.mp3 ]; then
+  wget http://taira-komori.jpn.org/sound/animals01/chick.mp3 -O $HOME/res/sound/peep/peep.mp3
 fi
 
 if [ -f ./peep ]; then
@@ -24,7 +24,7 @@ fi
 cp ./peep.sh ./peep
 chmod a+x peep
 
-if [ -f /Users/$USER/bin/peep ]; then
-  rm /Users/$USER/bin/peep
+if [ -f $HOME/bin/peep ]; then
+  rm $HOME/bin/peep
 fi
-mv ./peep /Users/$USER/bin/peep
+mv ./peep $HOME/bin/peep

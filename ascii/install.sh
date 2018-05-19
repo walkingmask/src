@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install ascii command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./ascii ]; then
@@ -16,7 +16,7 @@ fi
 cp ./ascii.sh ./ascii
 chmod a+x ascii
 
-if [ -f /Users/$USER/bin/ascii ]; then
-  rm /Users/$USER/bin/ascii
+if [ -f $HOME/bin/ascii ]; then
+  rm $HOME/bin/ascii
 fi
-mv ./ascii /Users/$USER/bin/ascii
+mv ./ascii $HOME/bin/ascii

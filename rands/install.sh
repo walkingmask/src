@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install rands command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./rands ]; then
@@ -16,7 +16,7 @@ fi
 gcc -Ofast rands.c -o rands
 chmod a+x rands
 
-if [ -f /Users/$USER/bin/rands ]; then
-  rm /Users/$USER/bin/rands
+if [ -f $HOME/bin/rands ]; then
+  rm $HOME/bin/rands
 fi
-mv ./rands /Users/$USER/bin/rands
+mv ./rands $HOME/bin/rands

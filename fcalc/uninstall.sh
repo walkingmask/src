@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall fcalc command
 
-if [ -f /Users/$USER/bin/fcalc ]; then
-  rm /Users/$USER/bin/fcalc
+if [ -f $HOME/bin/fcalc ]; then
+  rm $HOME/bin/fcalc
 fi

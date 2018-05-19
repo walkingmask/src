@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install fcalc command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./fcalc ]; then
@@ -16,7 +16,7 @@ fi
 gcc -Ofast fcalc.c -o fcalc
 chmod a+x fcalc
 
-if [ -f /Users/$USER/bin/fcalc ]; then
-  rm /Users/$USER/bin/fcalc
+if [ -f $HOME/bin/fcalc ]; then
+  rm $HOME/bin/fcalc
 fi
-mv ./fcalc /Users/$USER/bin/fcalc
+mv ./fcalc $HOME/bin/fcalc

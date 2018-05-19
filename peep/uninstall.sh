@@ -6,10 +6,10 @@ set -e
 # walkingmask
 # uninstall peep command
 
-if [ -f /Users/$USER/bin/peep ]; then
-  rm /Users/$USER/bin/peep
+if [ -f $HOME/bin/peep ]; then
+  rm $HOME/bin/peep
 fi
 
-if [ -d /Users/$USER/res/sound/peep ]; then
-  rm -rf /Users/$USER/res/sound/peep
+if [ -d $HOME/res/sound/peep ]; then
+  rm -rf $HOME/res/sound/peep
 fi

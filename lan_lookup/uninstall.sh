@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall lan_lookup command
 
-if [ -f /Users/$USER/bin/lan_lookup ]; then
-  rm /Users/$USER/bin/lan_lookup
+if [ -f $HOME/bin/lan_lookup ]; then
+  rm $HOME/bin/lan_lookup
 fi

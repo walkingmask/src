@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -eu
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./mp3play ]; then
@@ -11,7 +11,7 @@ fi
 cp ./mp3play.sh ./mp3play
 chmod a+x mp3play
 
-if [ -f /Users/$USER/bin/mp3play ]; then
-  rm /Users/$USER/bin/mp3play
+if [ -f $HOME/bin/mp3play ]; then
+  rm $HOME/bin/mp3play
 fi
-mv ./mp3play /Users/$USER/bin/mp3play
+mv ./mp3play $HOME/bin/mp3play

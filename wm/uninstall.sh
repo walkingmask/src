@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall wm command
 
-if [ -f /Users/$USER/bin/wm ]; then
-  rm /Users/$USER/bin/wm
+if [ -f $HOME/bin/wm ]; then
+  rm $HOME/bin/wm
 fi

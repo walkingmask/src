@@ -6,10 +6,10 @@ set -e
 # walkingmask
 # uninstall ks command
 
-if [ -f /Users/$USER/bin/ks ]; then
-  rm /Users/$USER/bin/ks
+if [ -f $HOME/bin/ks ]; then
+  rm $HOME/bin/ks
 fi
 
-if [ -d /Users/$USER/res/sound/ks ]; then
-  rm -rf /Users/$USER/res/sound/ks
+if [ -d $HOME/res/sound/ks ]; then
+  rm -rf $HOME/res/sound/ks
 fi

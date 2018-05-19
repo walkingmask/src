@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install lan_lookup command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./lan_lookup ]; then
@@ -16,7 +16,7 @@ fi
 cp ./lan_lookup.sh ./lan_lookup
 chmod a+x lan_lookup
 
-if [ -f /Users/$USER/bin/lan_lookup ]; then
-  rm /Users/$USER/bin/lan_lookup
+if [ -f $HOME/bin/lan_lookup ]; then
+  rm $HOME/bin/lan_lookup
 fi
-mv ./lan_lookup /Users/$USER/bin/lan_lookup
+mv ./lan_lookup $HOME/bin/lan_lookup

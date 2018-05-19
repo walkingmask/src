@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall ascii command
 
-if [ -f /Users/$USER/bin/ascii ]; then
-  rm /Users/$USER/bin/ascii
+if [ -f $HOME/bin/ascii ]; then
+  rm $HOME/bin/ascii
 fi

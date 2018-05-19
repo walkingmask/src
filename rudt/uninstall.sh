@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall rudt command
 
-if [ -f /Users/$USER/bin/rudt ]; then
-  rm /Users/$USER/bin/rudt
+if [ -f $HOME/bin/rudt ]; then
+  rm $HOME/bin/rudt
 fi

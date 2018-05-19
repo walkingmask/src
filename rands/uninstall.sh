@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # uninstall rands command
 
-if [ -f /Users/$USER/bin/rands ]; then
-  rm /Users/$USER/bin/rands
+if [ -f $HOME/bin/rands ]; then
+  rm $HOME/bin/rands
 fi
 
 if [ -L /usr/local/bin/rands ]; then

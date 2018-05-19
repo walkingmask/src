@@ -6,14 +6,14 @@ set -e
 # walkingmask
 # install gsou command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
-if [ ! -d /Users/$USER/res/template ]; then
-  mkdir -p /Users/$USER/res/template
+if [ ! -d $HOME/res/template ]; then
+  mkdir -p $HOME/res/template
 fi
-cp -r ./template /Users/$USER/res/template/gsou
+cp -r ./template $HOME/res/template/gsou
 
 if [ -f ./gsou ]; then
   rm ./gsou
@@ -21,7 +21,7 @@ fi
 sed -e "s|PWD|`pwd`|g" ./gsou.sh >>./gsou
 chmod a+x ./gsou
 
-if [ -f /Users/$USER/bin/gsou ]; then
-  rm /Users/$USER/bin/gsou
+if [ -f $HOME/bin/gsou ]; then
+  rm $HOME/bin/gsou
 fi
-mv ./gsou /Users/$USER/bin/gsou
+mv ./gsou $HOME/bin/gsou

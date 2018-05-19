@@ -6,8 +6,8 @@ set -eu
 # walkingmask
 # install hidf command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./hidf ]; then
@@ -16,7 +16,7 @@ fi
 cp ./hidf.sh ./hidf
 chmod a+x hidf
 
-if [ -f /Users/$USER/bin/hidf ]; then
-  rm /Users/$USER/bin/hidf
+if [ -f $HOME/bin/hidf ]; then
+  rm $HOME/bin/hidf
 fi
-mv ./hidf /Users/$USER/bin/hidf
+mv ./hidf $HOME/bin/hidf

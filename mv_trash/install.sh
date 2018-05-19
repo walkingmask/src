@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install mv_trash command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./mv_trash ]; then
@@ -16,7 +16,7 @@ fi
 cp ./mv_trash.sh ./mv_trash
 chmod a+x mv_trash
 
-if [ -f /Users/$USER/bin/mv_trash ]; then
-  rm /Users/$USER/bin/mv_trash
+if [ -f $HOME/bin/mv_trash ]; then
+  rm $HOME/bin/mv_trash
 fi
-mv ./mv_trash /Users/$USER/bin/mv_trash
+mv ./mv_trash $HOME/bin/mv_trash

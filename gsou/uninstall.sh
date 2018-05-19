@@ -6,10 +6,10 @@ set -e
 # walkingmask
 # uninstall gsou command
 
-if [ -f /Users/$USER/bin/gsou ]; then
-  rm /Users/$USER/bin/gsou
+if [ -f $HOME/bin/gsou ]; then
+  rm $HOME/bin/gsou
 fi
 
-if [ -d /Users/$USER/res/template/gsou ]; then
-  rm -rf /Users/$USER/res/template/gsou
+if [ -d $HOME/res/template/gsou ]; then
+  rm -rf $HOME/res/template/gsou
 fi

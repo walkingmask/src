@@ -6,8 +6,8 @@ set -e
 # walkingmask
 # install rudt command
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./rudt ]; then
@@ -16,7 +16,7 @@ fi
 cp ./rudt.sh ./rudt
 chmod a+x rudt
 
-if [ -f /Users/$USER/bin/rudt ]; then
-  rm /Users/$USER/bin/rudt
+if [ -f $HOME/bin/rudt ]; then
+  rm $HOME/bin/rudt
 fi
-mv ./rudt /Users/$USER/bin/rudt
+mv ./rudt $HOME/bin/rudt

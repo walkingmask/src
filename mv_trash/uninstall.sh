@@ -6,6 +6,6 @@ set -e
 # walkingmask
 # uninstall mv_trash command
 
-if [ -f /Users/$USER/bin/mv_trash ]; then
-  rm /Users/$USER/bin/mv_trash
+if [ -f $HOME/bin/mv_trash ]; then
+  rm $HOME/bin/mv_trash
 fi

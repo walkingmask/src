@@ -6,6 +6,6 @@ set -eu
 # walkingmask
 # uninstall hidf command
 
-if [ -f /Users/$USER/bin/hidf ]; then
-  rm /Users/$USER/bin/hidf
+if [ -f $HOME/bin/hidf ]; then
+  rm $HOME/bin/hidf
 fi

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -eu
 
-if [ ! -d /Users/$USER/bin ]; then
-  mkdir /Users/$USER/bin
+if [ ! -d $HOME/bin ]; then
+  mkdir $HOME/bin
 fi
 
 if [ -f ./mopen ]; then
@@ -11,7 +11,7 @@ fi
 cp ./mopen.sh ./mopen
 chmod a+x mopen
 
-if [ -f /Users/$USER/bin/mopen ]; then
-  rm /Users/$USER/bin/mopen
+if [ -f $HOME/bin/mopen ]; then
+  rm $HOME/bin/mopen
 fi
-mv ./mopen /Users/$USER/bin/mopen
+mv ./mopen $HOME/bin/mopen
