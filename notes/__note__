@@ -1,0 +1,14 @@
+HERE=$NOTES_LOCATION/$note
+
+NEW_NOTE="${HERE}/note`date '+%Y%m%d'`.md"
+if [ -e $NEW_NOTE ]; then
+  :
+else
+  _notes=(`find $HERE -type f -name 'note*.md' | sort`)
+  if [ ${#_notes[@]} -gt 0 ]; then
+    cp ${_notes[${#_notes[@]}-1]} $NEW_NOTE
+  else
+    echo -e "# Note\n\n('e') < Hey!\n\n" >>$NEW_NOTE
+  fi
+fi
+subl -a $HERE $NEW_NOTE
