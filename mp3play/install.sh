@@ -8,7 +8,7 @@ fi
 if [ -f ./mp3play ]; then
   rm ./mp3play
 fi
-cp ./mp3play.sh ./mp3play
+cp ./mp3play.py ./mp3play
 chmod a+x mp3play
 
 if [ -f $HOME/bin/mp3play ]; then
