@@ -1,17 +1,19 @@
-hidf
-======================
+# hidf
+
 Switching of the display/hide hidden files.
 
-Installinig
-------
+
+## Install
+
 ```
 cd hidf
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
-------
+
+## Uninstall
+
 ```
 cd hidf
 sh uninstall.sh

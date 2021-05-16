@@ -1,9 +1,10 @@
-rands
-======================
+# rands
+
 Output random string.
 
-Examples
-------
+
+## Examples
+
 ```
 $ rands
 2Y9b(5?I
@@ -13,8 +14,9 @@ $ rands -sS
 25 MwK 2
 ```
 
-Options
-------
+
+## Options
+
 ```
 -l  length specifies the string length
 -aAnsS
@@ -26,15 +28,17 @@ Options
 -h  show help
 ```
 
-Installing
-------
+
+## Install
+
 ```
 cd rands
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
+
+## Uninstall
 ------
 ```
 cd rands

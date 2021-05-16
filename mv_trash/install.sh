@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2015/12/24(Thu)
+# updated at 2021/05/16 (Sun)
+# created at 2015/12/24 (Thu)
 # walkingmask
 # install mv_trash command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./mv_trash ]; then
-  rm ./mv_trash
+if [ -f ${HERE}/mv_trash ]; then
+  /bin/rm ${HERE}/mv_trash
 fi
-cp ./mv_trash.sh ./mv_trash
-chmod a+x mv_trash
+/bin/cp ${HERE}/mv_trash.sh ${HERE}/mv_trash
+/bin/chmod a+x ${HERE}/mv_trash
 
-if [ -f $HOME/bin/mv_trash ]; then
-  rm $HOME/bin/mv_trash
+if [ -f ${HOME}/bin/mv_trash ]; then
+  /bin/rm ${HOME}/bin/mv_trash
 fi
-mv ./mv_trash $HOME/bin/mv_trash
+/bin/mv ${HERE}/mv_trash $HOME/bin/mv_trash
+
+exit 0

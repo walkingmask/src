@@ -1,18 +1,24 @@
 # mopen
+
 Open media file using Google Chrome.
 
+
 ## Available Media format
+
 All formats supported by Google chrome.
 
 
-## Installing
+## Install
+
 ```
 cd mopen
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-## Uninstalling
+
+## Uninstall
+
 ```
 cd mopen
 sh uninstall.sh

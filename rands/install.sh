@@ -1,22 +1,33 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/01/17(Sun)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/17 (Sun)
 # walkingmask
 # install rands command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if ! command -v gcc &> /dev/null; then
+  echo "WARNIG: gcc required to install rands"
+  exit 0
 fi
 
-if [ -f ./rands ]; then
-  rm ./rands
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
-gcc -Ofast rands.c -o rands
-chmod a+x rands
 
-if [ -f $HOME/bin/rands ]; then
-  rm $HOME/bin/rands
+if [ -f ${HERE}/rands ]; then
+  /bin/rm ${HERE}/rands
 fi
-mv ./rands $HOME/bin/rands
+
+gcc -Ofast ${HERE}/rands.c -o ${HERE}/rands
+/bin/chmod a+x ${HERE}/rands
+
+if [ -f ${HOME}/bin/rands ]; then
+  /bin/rm ${HOME}/bin/rands
+fi
+/bin/mv ${HERE}/rands ${HOME}/bin/rands
+
+exit 0

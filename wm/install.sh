@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/02/20(Sat)
+# updated at 2021/05/16 (Sun)
+# created at 2016/02/20 (Sat)
 # walkingmask
 # install wm command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./wm ]; then
-  rm ./wm
+if [ -f ${HERE}/wm ]; then
+  /bin/rm ${HERE}/wm
 fi
-cp ./wm.sh ./wm
-chmod a+x wm
+/bin/cp ${HERE}/wm.sh ${HERE}/wm
+/bin/chmod a+x ${HERE}/wm
 
-if [ -f $HOME/bin/wm ]; then
-  rm $HOME/bin/wm
+if [ -f ${HOME}/bin/wm ]; then
+  /bin/rm ${HOME}/bin/wm
 fi
-mv ./wm $HOME/bin/wm
+/bin/mv ${HERE}/wm $HOME/bin/wm
+
+exit 0

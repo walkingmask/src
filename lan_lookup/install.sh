@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2017/08/19(Sat)
+# updated at 2021/05/16 (Sun)
+# created at 2017/08/19 (Sat)
 # walkingmask
 # install lan_lookup command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./lan_lookup ]; then
-  rm ./lan_lookup
+if [ -f ${HERE}/lan_lookup ]; then
+  /bin/rm ${HERE}/lan_lookup
 fi
-cp ./lan_lookup.sh ./lan_lookup
-chmod a+x lan_lookup
+/bin/cp ${HERE}/lan_lookup.sh ${HERE}/lan_lookup
+/bin/chmod a+x ${HERE}/lan_lookup
 
-if [ -f $HOME/bin/lan_lookup ]; then
-  rm $HOME/bin/lan_lookup
+if [ -f ${HOME}/bin/lan_lookup ]; then
+  /bin/rm ${HOME}/bin/lan_lookup
 fi
-mv ./lan_lookup $HOME/bin/lan_lookup
+/bin/mv ${HERE}/lan_lookup $HOME/bin/lan_lookup
+
+exit 0

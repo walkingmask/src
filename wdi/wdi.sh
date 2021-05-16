@@ -2,7 +2,7 @@
 set -eu
 
 # wdi.sh
-# 2016/12/19(月)
+# created at 2016/12/19 (月)
 # walkingmask
 # What day is?
 # References

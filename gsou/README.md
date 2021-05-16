@@ -1,9 +1,10 @@
-gsou
-======================
+# gsou
+
 Generate source code template.
 
-Examples
-------
+
+## Examples
+
 ```
 $ gsou -pl test
 $ cat test.pl
@@ -21,30 +22,31 @@ print("Hello, World!");
 exit(0);
 ```
 
-Options
-------
+
+## Options
+
 ```
 -c    Clang
+-go   golang
+-html HTML
 -java Java
 -pl   Perl
 -py   Python
 -sh   ShellScript
 ```
 
-Requirements
-------
-- Sublime Text 3
 
-Installing
-------
+## Install
+
 ```
 cd gsou
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
-------
+
+## Uninstall
+
 ```
 cd gsou
 sh uninstall.sh

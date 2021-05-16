@@ -1,17 +1,19 @@
-rudt
-======================
+# rudt
+
 print RUDT AA.
 
-Installing
-------
+
+## Install
+
 ```
 cd rudt
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
-------
+
+## Uninstall
+
 ```
 cd rudt
 sh uninstall.sh

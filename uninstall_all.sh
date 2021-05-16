@@ -2,16 +2,24 @@
 set -eu
 
 # uninstall_all.sh
-# 2017/03/09(Thu)
+# updated at 2021/05/16 (Sun)
+# created at 2017/03/09 (Thu)
 # walkingmask
 
-for obj in ./*; do
+HERE=$(cd $(dirname $0); pwd)
+
+for obj in ${HERE}/*; do
   if [ -d $obj ]; then
     [[ $obj =~ ".git" ]] && continue
-    cd $obj
-    bash uninstall.sh
-    cd ..
+    sh ${obj%/}/uninstall.sh
   fi
 done
+
+if [ -z "$(ls -A ${HOME}/bin)" ]; then
+  /bin/rm -rf ${HOME}/bin
+else
+  echo "${HOME}/bin is not empty"
+  echo "If you don't need it, delete it yourself"
+fi
 
 exit 0

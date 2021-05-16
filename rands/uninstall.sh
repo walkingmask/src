@@ -1,15 +1,18 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # uninstall.sh
-# 2015/01/17(San)
+# updated at 2021/05/16 (Sun)
+# created at 2015/01/17 (San)
 # walkingmask
 # uninstall rands command
 
-if [ -f $HOME/bin/rands ]; then
-  rm $HOME/bin/rands
+if [ -f ${HOME}/bin/rands ]; then
+  /bin/rm ${HOME}/bin/rands
 fi
 
-if [ -L /usr/local/bin/rands ]; then
-  sudo rm /usr/local/bin/rands
+if [ -z "$(ls -A ${HOME}/bin)" ]; then
+  /bin/rm -rf ${HOME}/bin
 fi
+
+exit 0

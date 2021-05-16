@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -eu -o pipefail
 
-# hidf
-# 2017/07/15(Mon)
+# ascii
+# created at 2017/07/15 (Mon)
 # walkingmask
-# ASCII
+# Show ASCII table
 
 function ascii(){
   if [ $# -eq 0 ]; then

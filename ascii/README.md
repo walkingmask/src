@@ -1,7 +1,10 @@
 # ascii
+
 Reference of ASCII code
 
+
 ## Examples
+
 ```
 $ ascii -d A
 65
@@ -24,7 +27,9 @@ $ ascii -d
 |120  x |121  y |122  z |123  { |124  | |125  } |126  ~ |127 del|
 ```
 
+
 ## Options
+
 ```
 -o    Octal
 -x    Hexadecimal
@@ -32,14 +37,18 @@ $ ascii -d
 char  A character
 ```
 
-## Installing
+
+## Installi
+
 ```
 cd ascii
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-## Uninstalling
+
+## Uninstall
+
 ```
 cd ascii
 sh uninstall.sh

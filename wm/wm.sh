@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # wm command
-# 2016/02/20(Sat)
+# created at 2016/02/20 (Sat)
 # walkingmask
 # print WalkingMask
 # ref

@@ -1,15 +1,22 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # uninstall.sh
-# 2016/01/17(Sun)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/17 (Sun)
 # walkingmask
 # uninstall peep command
 
-if [ -f $HOME/bin/peep ]; then
-  rm $HOME/bin/peep
+if [ -f ${HOME}/bin/peep ]; then
+  /bin/rm ${HOME}/bin/peep
 fi
 
-if [ -d $HOME/res/sound/peep ]; then
-  rm -rf $HOME/res/sound/peep
+if [ -d ${HOME}/.peep ]; then
+  /bin/rm -rf ${HOME}/.peep
 fi
+
+if [ -z "$(ls -A ${HOME}/bin)" ]; then
+  /bin/rm -rf ${HOME}/bin
+fi
+
+exit 0

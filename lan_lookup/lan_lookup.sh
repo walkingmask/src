@@ -2,9 +2,13 @@
 #set -eu -o pipefail
 
 # lan_lookup
-# 2017/08/19(Sat)
+# created at 2017/08/19 (Sat)
 # walkingmask
 # Look up IP addresses and MAC addresses in LAN
+
+# TODO: 10.0.0.0〜10.255.255.255
+# TODO: 172.16.0.0〜172.31.255.255
+# TODO: be parallel
 
 function lan_lookup(){
   if [ $# -eq 0 ]; then

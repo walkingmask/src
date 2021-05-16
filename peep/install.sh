@@ -1,30 +1,45 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/01/17(Sun)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/17 (Sun)
 # walkingmask
 # install peep command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if ! command -v wget &>/dev/null && ! command -v curl &>/dev/null; then
+  echo "WARNING: wget or curl requried to install peep command" 1>&2
+  exit 0
 fi
 
-if [ ! -d $HOME/res/sound/peep ]; then
-  mkdir -p $HOME/res/sound/peep
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ ! -f $HOME/res/sound/peep/peep.mp3 ]; then
-  wget http://taira-komori.jpn.org/sound/animals01/chick.mp3 -O $HOME/res/sound/peep/peep.mp3
+if [ -d $HOME/.peep ]; then
+  /bin/rm -rf $HOME/.peep
+fi
+mkdir -p $HOME/.peep
+
+if [ ! -f ${HOME}/.peep/peep.mp3 ]; then
+  if command -v wget &>/dev/null; then
+    wget http://taira-komori.jpn.org/sound/animals01/chick.mp3 -O $HOME/.peep/peep.mp3
+  elif command -v curl &>/dev/null; then
+    curl -L http://taira-komori.jpn.org/sound/animals01/chick.mp3 --output $HOME/.peep/peep.mp3
+  fi
 fi
 
-if [ -f ./peep ]; then
-  rm ./peep
+if [ -f ${HERE}/peep ]; then
+  /bin/rm ${HERE}/peep
 fi
-cp ./peep.sh ./peep
-chmod a+x peep
+/bin/cp ${HERE}/peep.sh ${HERE}/peep
+/bin/chmod a+x ${HERE}/peep
 
-if [ -f $HOME/bin/peep ]; then
-  rm $HOME/bin/peep
+if [ -f ${HOME}/bin/peep ]; then
+  /bin/rm ${HOME}/bin/peep
 fi
-mv ./peep $HOME/bin/peep
+/bin/mv ${HERE}/peep $HOME/bin/peep
+
+exit 0

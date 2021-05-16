@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 set -eu
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+# install.sh
+# updated at 2021/05/16 (Sun)
+# walkingmask
+# install mopen command
+
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./mopen ]; then
-  rm ./mopen
+if [ -f ${HERE}/mopen ]; then
+  /bin/rm ${HERE}/mopen
 fi
-cp ./mopen.sh ./mopen
-chmod a+x mopen
+/bin/cp ${HERE}/mopen.sh ${HERE}/mopen
+/bin/chmod a+x ${HERE}/mopen
 
-if [ -f $HOME/bin/mopen ]; then
-  rm $HOME/bin/mopen
+if [ -f ${HOME}/bin/mopen ]; then
+  /bin/rm ${HOME}/bin/mopen
 fi
-mv ./mopen $HOME/bin/mopen
+/bin/mv ${HERE}/mopen $HOME/bin/mopen
+
+exit 0

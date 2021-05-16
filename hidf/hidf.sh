@@ -2,7 +2,7 @@
 set -eu
 
 # hidf
-# 2016/09/07(Wed)
+# created at 2016/09/07 (Wed)
 # walkingmask
 # hide files on/off
 

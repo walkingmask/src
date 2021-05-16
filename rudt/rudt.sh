@@ -1,11 +1,10 @@
 #!/bin/sh
 
 # rudt command
-# 2016/02/20(Sat)
+# created at 2016/02/20 (Sat)
 # walkingmask
 # print RUDT
-# ref
-#  http://patorjk.com/software/taag/#p=testall&h=0&v=0&f=Ghost&t=RUDT
+# ref: http://patorjk.com/software/taag/#p=testall&h=0&v=0&f=Ghost&t=RUDT
 
 printf "\
  /RRRRRRR  /UU   /UU /DDDDDDD  /TTTTTTTT\n\

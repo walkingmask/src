@@ -1,30 +1,45 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/01/11(Mon)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/11 (Mon)
 # walkingmask
 # install ks command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if ! command -v wget &>/dev/null && ! command -v curl &>/dev/null; then
+  echo "WARNING: wget or curl requried to install ks command" 1>&2
+  exit 0
 fi
 
-if [ ! -d $HOME/res/sound/ks ]; then
-  mkdir -p $HOME/res/sound/ks
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ ! -f $HOME/res/sound/ks/bell.mp3 ]; then
-  wget http://sound.gob.jp/library/mp3/S_651.mp3 -O $HOME/res/sound/ks/bell.mp3
+if [ -d ${HOME}/.ks ]; then
+  /bin/rm -rf ${HOME}/.ks
+fi
+/bin/mkdir -p ${HOME}/.ks
+
+if [ ! -f ${HOME}/.ks/bell.mp3 ]; then
+  if command -v wget &>/dev/null; then
+    wget http://sound.gob.jp/library/mp3/S_651.mp3 -O $HOME/.ks/bell.mp3
+  elif command -v curl &>/dev/null; then
+    curl -L http://sound.gob.jp/library/mp3/S_651.mp3 --output $HOME/.ks/bell.mp3
+  fi
 fi
 
-if [ -f ./ks ]; then
-  rm ./ks
+if [ -f ${HERE}/ks ]; then
+  /bin/rm ${HERE}/ks
 fi
-cp ./ks.sh ./ks
-chmod a+x ks
+/bin/cp ${HERE}/ks.sh ${HERE}/ks
+/bin/chmod a+x ${HERE}/ks
 
-if [ -f $HOME/bin/ks ]; then
-  rm $HOME/bin/ks
+if [ -f ${HOME}/bin/ks ]; then
+  /bin/rm ${HOME}/bin/ks
 fi
-mv ./ks $HOME/bin/ks
+/bin/mv ${HERE}/ks $HOME/bin/ks
+
+exit 0

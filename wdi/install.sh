@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/12/19(Mon)
+# updated at 2021/05/16 (Sun)
+# created at 2016/12/19 (Mon)
 # walkingmask
 # install wdi command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./wdi ]; then
-  rm ./wdi
+if [ -f ${HERE}/wdi ]; then
+  /bin/rm ${HERE}/wdi
 fi
-cp ./wdi.sh ./wdi
-chmod a+x wdi
+/bin/cp ${HERE}/wdi.sh ${HERE}/wdi
+/bin/chmod a+x ${HERE}/wdi
 
-if [ -f $HOME/bin/wdi ]; then
-  rm $HOME/bin/wdi
+if [ -f ${HOME}/bin/wdi ]; then
+  /bin/rm ${HOME}/bin/wdi
 fi
-mv ./wdi $HOME/bin/wdi
+/bin/mv ${HERE}/wdi $HOME/bin/wdi
+
+exit 0

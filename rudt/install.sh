@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/02/20(Sat)
+# updated at 2021/05/16 (Sun)
+# created at 2016/02/20 (Sat)
 # walkingmask
 # install rudt command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./rudt ]; then
-  rm ./rudt
+if [ -f ${HERE}/rudt ]; then
+  /bin/rm ${HERE}/rudt
 fi
-cp ./rudt.sh ./rudt
-chmod a+x rudt
+/bin/cp ${HERE}/rudt.sh ${HERE}/rudt
+/bin/chmod a+x ${HERE}/rudt
 
-if [ -f $HOME/bin/rudt ]; then
-  rm $HOME/bin/rudt
+if [ -f ${HOME}/bin/rudt ]; then
+  /bin/rm ${HOME}/bin/rudt
 fi
-mv ./rudt $HOME/bin/rudt
+/bin/mv ${HERE}/rudt $HOME/bin/rudt
+
+exit 0

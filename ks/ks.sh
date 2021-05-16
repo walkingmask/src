@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # ks command
-# 2016/01/11(Mon)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/11 (Mon)
 # walkingmask
 # ls joke command
 
@@ -23,6 +24,6 @@ do
   printf "\r${ch:$i:$column}"
   sleep 0.01
 done
-afplay $HOME/res/sound/ks/bell.mp3 &
+afplay $HOME/.ks/bell.mp3 &
 echo "\r|q^)9m KASU!!"
 trap - INT 

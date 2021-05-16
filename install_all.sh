@@ -2,15 +2,22 @@
 set -eu
 
 # install_all.sh
-# 2017/03/09(Thu)
+# updated at 2021/05/16 (Sun)
+# created at 2017/03/09 (Thu)
 # walkingmask
 
-for obj in ./*; do
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  mkdir ${HOME}/bin
+fi
+
+for obj in ${HERE}/*; do
   if [ -d $obj ]; then
     [[ $obj =~ ".git" ]] && continue
-    cd $obj
-    bash install.sh
-    cd ..
+    echo "Install ${obj}"
+    sh ${obj%/}/install.sh
+    echo "Done"
   fi
 done
 

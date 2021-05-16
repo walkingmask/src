@@ -1,22 +1,33 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/05/26(Thu)
+# updated at 2021/05/16 (Sun)
+# created at 2016/05/26 (Thu)
 # walkingmask
 # install fcalc command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if ! command -v gcc &> /dev/null; then
+  echo "WARNIG: gcc required to install fcalc"
+  exit 0
 fi
 
-if [ -f ./fcalc ]; then
-  rm ./fcalc
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
-gcc -Ofast fcalc.c -o fcalc
-chmod a+x fcalc
 
-if [ -f $HOME/bin/fcalc ]; then
-  rm $HOME/bin/fcalc
+if [ -f ${HERE}/fcalc ]; then
+  /bin/rm ${HERE}/fcalc
 fi
-mv ./fcalc $HOME/bin/fcalc
+
+gcc -Ofast ${HERE}/fcalc.c -o ${HERE}/fcalc
+/bin/chmod a+x ${HERE}/fcalc
+
+if [ -f ${HOME}/bin/fcalc ]; then
+  /bin/rm ${HOME}/bin/fcalc
+fi
+/bin/mv ${HERE}/fcalc ${HOME}/bin/fcalc
+
+exit 0

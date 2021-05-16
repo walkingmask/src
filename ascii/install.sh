@@ -1,22 +1,27 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # install.sh
-# 2016/12/19(Mon)
+# updated at 2021/05/16 (Sun)
+# created at 2016/12/19 (Mon)
 # walkingmask
 # install ascii command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./ascii ]; then
-  rm ./ascii
+if [ -f ${HERE}/ascii ]; then
+  /bin/rm ${HERE}/ascii
 fi
-cp ./ascii.sh ./ascii
-chmod a+x ascii
+/bin/cp ${HERE}/ascii.sh ${HERE}/ascii
+/bin/chmod a+x ${HERE}/ascii
 
-if [ -f $HOME/bin/ascii ]; then
-  rm $HOME/bin/ascii
+if [ -f ${HOME}/bin/ascii ]; then
+  /bin/rm ${HOME}/bin/ascii
 fi
-mv ./ascii $HOME/bin/ascii
+/bin/mv ${HERE}/ascii $HOME/bin/ascii
+
+exit 0

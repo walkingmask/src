@@ -1,15 +1,22 @@
-#!/bin/sh
-set -e
+#!/usr/bin/env bash
+set -eu
 
 # uninstall.sh
-# 2016/01/19(Tue)
+# updated at 2021/05/16 (Sun)
+# created at 2016/01/19 (Tue)
 # walkingmask
 # uninstall gsou command
 
-if [ -f $HOME/bin/gsou ]; then
-  rm $HOME/bin/gsou
+if [ -f ${HOME}/bin/gsou ]; then
+  /bin/rm ${HOME}/bin/gsou
 fi
 
-if [ -d $HOME/res/template/gsou ]; then
-  rm -rf $HOME/res/template/gsou
+if [ -d ${HOME}/.gsou/template ]; then
+  /bin/rm -rf ${HOME}/.gsou/template
 fi
+
+if [ -z "$(ls -A ${HOME}/bin)" ]; then
+  /bin/rm -rf ${HOME}/bin
+fi
+
+exit 0

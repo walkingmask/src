@@ -1,22 +1,27 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -eu
 
 # install.sh
-# 2016/09/07(Wed)
+# updated at 2021/05/16 (Sun)
+# created at 2016/09/07 (Wed)
 # walkingmask
 # install hidf command
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./hidf ]; then
-  rm ./hidf
+if [ -f ${HERE}/hidf ]; then
+  /bin/rm ${HERE}/hidf
 fi
-cp ./hidf.sh ./hidf
-chmod a+x hidf
+/bin/cp ${HERE}/hidf.sh ${HERE}/hidf
+/bin/chmod a+x ${HERE}/hidf
 
-if [ -f $HOME/bin/hidf ]; then
-  rm $HOME/bin/hidf
+if [ -f ${HOME}/bin/hidf ]; then
+  /bin/rm ${HOME}/bin/hidf
 fi
-mv ./hidf $HOME/bin/hidf
+/bin/mv ${HERE}/hidf $HOME/bin/hidf
+
+exit 0

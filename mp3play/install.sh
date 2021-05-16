@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 set -eu
 
-if [ ! -d $HOME/bin ]; then
-  mkdir $HOME/bin
+# install.sh
+# updated at 2021/05/16 (Sun)
+# walkingmask
+# install mp3play command
+
+HERE=$(cd $(dirname $0); pwd)
+
+if [ ! -d ${HOME}/bin ]; then
+  /bin/mkdir ${HOME}/bin
 fi
 
-if [ -f ./mp3play ]; then
-  rm ./mp3play
+if [ -f ${HERE}/mp3play ]; then
+  /bin/rm ${HERE}/mp3play
 fi
-cp ./mp3play.py ./mp3play
-chmod a+x mp3play
+/bin/cp ${HERE}/mp3play.py ${HERE}/mp3play
+/bin/chmod a+x ${HERE}/mp3play
 
-if [ -f $HOME/bin/mp3play ]; then
-  rm $HOME/bin/mp3play
+if [ -f ${HOME}/bin/mp3play ]; then
+  /bin/rm ${HOME}/bin/mp3play
 fi
-mv ./mp3play $HOME/bin/mp3play
+/bin/mv ${HERE}/mp3play $HOME/bin/mp3play
+
+exit 0

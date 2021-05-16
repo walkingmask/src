@@ -1,9 +1,10 @@
-fcalc
-======================
+# fcalc
+
 Calculate fractional expressions as fractions.
 
-Examples
-------
+
+## Examples
+
 ```
 $ fcalc "1/2 + 2/5"
 9/10
@@ -15,20 +16,22 @@ $ fcalc "1/2 / 2/5"
 5/4
 ```
 
-Options
-------
+## Options
+
 No options.
 
-Installing
-------
+
+## Install
+
 ```
 cd fcalc
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
-------
+
+## Uninstall
+
 ```
 cd fcalc
 sh uninstall.sh

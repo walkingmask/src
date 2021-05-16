@@ -1,18 +1,19 @@
-wm
-======================
+# wm
+
 print WalkingMask AA.
 
 
-Installing
-------
+## Install
+
 ```
 cd wm
 bash install.sh
 echo 'export PATH=$PATH:$HOME/bin' >>~/.zshrc
 ```
 
-Uninstalling
-------
+
+## Uninstall
+
 ```
 cd wm
 sh uninstall.sh
