@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
 set -eu
 
-# uninstall_all.sh
+# install.sh
 # updated at 2021/05/16 (Sun)
 # created at 2017/03/09 (Thu)
 # walkingmask
 
 HERE=$(cd $(dirname $0); pwd)
 
+if [ ! -d ${HOME}/bin ]; then
+  mkdir ${HOME}/bin
+fi
+
 for obj in ${HERE}/*; do
   if [ -d $obj ]; then
     [[ $obj =~ ".git" ]] && continue
-    sh ${obj%/}/uninstall.sh
+    echo "Install ${obj}"
+    sh ${obj%/}/install.sh
+    echo "Done"
   fi
 done
-
-if [ -z "$(ls -A ${HOME}/bin)" ]; then
-  /bin/rm -rf ${HOME}/bin
-else
-  echo "${HOME}/bin is not empty"
-  echo "If you don't need it, delete it yourself"
-fi
 
 exit 0
