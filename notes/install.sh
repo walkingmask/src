@@ -23,4 +23,11 @@ if [ -f ${HOME}/bin/notes ]; then
 fi
 /bin/mv ${HERE}/notes $HOME/bin/notes
 
+if [ -f ${HOME}/.config/notes/config.sh ]; then
+  read -p "The notes config file already exists. Do you want to delete? " ans
+  if [ "$ans" = "y" ]; then
+    /bin/rm ${HOME}/.config/notes/config.sh
+  fi
+fi
+
 exit 0
